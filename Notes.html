@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کپی متن</title>
+</head>
+<body>
+    <h1>کپی کردن متن</h1>
+    <input type="text" id="myInput" placeholder="متن خود را اینجا بنویسید">
+    <button onclick="copyText()">کپی</button>
+
+    <script>
+        function copyText() {
+            // کادر متن را پیدا کنید
+            var input = document.getElementById("myInput");
+
+            // متن را انتخاب کنید
+            input.select();
+            input.setSelectionRange(0, 99999); // برای موبایل‌های قدیمی
+
+            // متن انتخاب شده را کپی کنید
+            document.execCommand("copy");
+
+            // پیام موفقیت را نمایش دهید
+            alert("متن کپی شد: " + input.value);
+        }
+    </script>
+</body>
+</html>
